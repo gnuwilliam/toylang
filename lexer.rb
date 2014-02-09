@@ -36,7 +36,7 @@ class Lexer
           tokens << [:IDENTIFIER, identifier]
         end
 
-        # skip what we just parsed
+        # skip what was just parsed
         i += identifier.size
       end
     end
