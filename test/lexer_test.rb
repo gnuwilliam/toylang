@@ -47,5 +47,4 @@ CODE
     ]
     assert_equal tokens, Lexer.new.tokenize(code)
   end
-  
 end
