@@ -55,6 +55,17 @@ class Lexer
       elsif string = chunk[/\A"(.*?)"/, 1]
         tokens << [:STRING, string]
         i += string.size + 2
+
+      # indentation handler
+      # 
+      # 3 cases to take care of
+      #
+      #    if true: # 1) the block is created
+      #      line 1
+      #      line 2 # 2) new line inside a block
+      #    continue # 3) dedent
+      # this elsif will take care of the first case
+      # the number of spaces will determine the indent level
       end
     end
   end
