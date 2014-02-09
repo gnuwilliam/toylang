@@ -108,7 +108,10 @@ class Lexer
       elsif operator = chunk[/\A(\|\||&&|==|!=|<=|=>)/, 1]
         tokens << [operator, operator]
         i += operator.size
-        
+
+      # ignore whitespace
+      elsif chunk.match(/\A /)
+        i += 1
     end
   end
 end
