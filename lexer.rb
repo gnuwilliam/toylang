@@ -126,5 +126,8 @@ class Lexer
     while indent = indent_stack.pop
       tokens << [:DEDENT, indent_stack.first || 0]
     end
+
+    # return tokens
+    tokens
   end
 end
