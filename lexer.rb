@@ -121,5 +121,10 @@ class Lexer
         i += 1
       end
     end
+
+    # close all open blocks
+    while indent = indent_stack.pop
+      tokens << [:DEDENT, indent_stack.first || 0]
+    end
   end
 end
