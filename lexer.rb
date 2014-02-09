@@ -35,6 +35,9 @@ class Lexer
           # non-keyword identifiers include method and variable names
           tokens << [:IDENTIFIER, identifier]
         end
+
+        # skip what we just parsed
+        i += identifier.size
       end
     end
   end
