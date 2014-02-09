@@ -5,6 +5,7 @@ class Lexer
     # cleanup code by remove extra line breaks
     code.chomp!
 
-    
+    # current character position we're parsing
+    i = 0
   end
 end
