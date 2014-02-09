@@ -22,6 +22,13 @@ class Lexer
     # scan one character at the time until find something to parse
     while i < code.size
       chunk = code[i..-1]
+
+      # matching standard tokens
+      #
+      # match if, print, method names, etc
+      if identifier = chunk[/\A([a-z]\w*)/, 1]
+        
+      end
     end
   end
 end
