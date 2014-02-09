@@ -89,6 +89,18 @@ class Lexer
         if indent.size == current_indent # case 2
           # nothing to do, still in the same block
           tokens << [:NEWLINE, "\n"]
+
+        elsif indent.size < current_indent # case 3
+          while indent.size < current_indent
+            indent_stack.pop
+            current_indent = indent_stack.first || 0
+            tokens << [:DEDENT, indent.size]
+          end
+          tokens << [:NEWLINE, "\n"]
+        else # indent.size > current_indent => error!
+          # cannot increase indent level without using ":", so this is an error
+          raise "Missing ':'"
+        end
     end
   end
 end
