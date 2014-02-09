@@ -17,5 +17,11 @@ class Lexer
     # keep track of the indentation levels we are in so that when we dedent, we can
     # check if we're on the correct level.
     indent_stack = []
+
+    # simple scanner implementation
+    # scan one character at the time until find something to parse
+    while i < code.size
+      chunk = code[i..-1]
+    end
   end
 end
