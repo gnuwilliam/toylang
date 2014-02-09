@@ -17,4 +17,9 @@ class LexerTest < Test::Unit::TestCase
   def test_constant
     assert_equal [[:CONSTANT, "Name"]], Lexer.new.tokenize('Name')
   end
+
+  def test_operator
+    assert_equal [["+", "+"]], Lexer.new.tokenize('+')
+    assert_equal [["||", "||"]], Lexer.new.tokenize('||')
+  end
 end
