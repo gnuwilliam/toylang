@@ -27,7 +27,14 @@ class Lexer
       #
       # match if, print, method names, etc
       if identifier = chunk[/\A([a-z]\w*)/, 1]
-        
+        # keywords - special identifiers tagged with their own name
+        # 'if' will result in an [:IF, "if"] token
+        if KEYWORDS.include?(identifier)
+          tokens << [identifier.upcase.to_sym, identifier]
+        else
+          # non-keyword identifiers include method and variable names
+          tokens << [:IDENTIFIER, identifier]
+        end
       end
     end
   end
