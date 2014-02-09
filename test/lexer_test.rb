@@ -9,4 +9,8 @@ class LexerTest < Test::Unit::TestCase
   def test_string
     assert_equal [[:STRING, "hi"]], Lexer.new.tokenize('"hi"')
   end
+
+  def test_identifier
+    assert_equal [[:IDENTIFIER, "name"]], Lexer.new.tokenize('name')
+  end
 end
