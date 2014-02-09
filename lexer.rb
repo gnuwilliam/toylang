@@ -40,9 +40,17 @@ class Lexer
         i += identifier.size
 
       # match class names and constants starting with a capital letter
+      # 
+      # match constants
       elsif constant = chunk[/\A([A-Z]\w*)/, 1]
         tokens << [:CONSTANT, constant]
         i += constant.size
+
+      # match numbers
+      elsif number = chunk[/\A([0-9]+)/, 1]
+        tokens << [:NUMBER, number.to_i]
+        i += number.size
+
       end
     end
   end
