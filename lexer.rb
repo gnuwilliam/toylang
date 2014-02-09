@@ -1,5 +1,5 @@
 class Lexer
-  KEYWORDS = ["def", "class", "if", "true", "false", "nil"]
+  KEYWORDS = ["def", "class", "if", "while", "true", "false", "nil"]
 
   def tokenize(code)
     # cleanup code by remove extra line breaks
