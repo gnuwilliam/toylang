@@ -102,6 +102,10 @@ class Lexer
           raise "Missing ':'"
         end
         i += indent.size + 1
+
+      # match long operators such as ||, &&, ==, !=, <= and >=
+      # one character long operators are matched by the catch all `else` at the bottom
+      elsif
     end
   end
 end
