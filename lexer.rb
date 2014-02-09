@@ -38,6 +38,11 @@ class Lexer
 
         # skip what was just parsed
         i += identifier.size
+
+      # match class names and constants starting with a capital letter
+      elsif constant = chunk[/\A([A-Z]\w*)/, 1]
+        tokens << [:CONSTANT, constant]
+        i += number.size
       end
     end
   end
