@@ -51,6 +51,10 @@ class Lexer
         tokens << [:NUMBER, number.to_i]
         i += number.size
 
+      # match strings
+      elsif string = chunk[/\A"(.*?)"/, 1]
+        tokens << [:STRING, string]
+        i += string.size + 2
       end
     end
   end
