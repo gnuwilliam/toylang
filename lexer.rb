@@ -7,5 +7,8 @@ class Lexer
 
     # current character position we're parsing
     i = 0
+
+    # collection of all parsed tokens in the form [:TOKEN_TYPE, value]
+    tokens = []
   end
 end
