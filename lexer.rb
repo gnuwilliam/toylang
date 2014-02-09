@@ -112,6 +112,14 @@ class Lexer
       # ignore whitespace
       elsif chunk.match(/\A /)
         i += 1
+
+      # catch all single characters
+      # threat all other single chars as a token. eg.: ( ) , . ! + - <
+      else
+        value = chunk[0, 1]
+        tokens << [value, value]
+        i += 1
+      end
     end
   end
 end
