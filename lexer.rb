@@ -42,7 +42,7 @@ class Lexer
       # match class names and constants starting with a capital letter
       elsif constant = chunk[/\A([A-Z]\w*)/, 1]
         tokens << [:CONSTANT, constant]
-        i += number.size
+        i += constant.size
       end
     end
   end
