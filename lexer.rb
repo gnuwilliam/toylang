@@ -101,6 +101,7 @@ class Lexer
           # cannot increase indent level without using ":", so this is an error
           raise "Missing ':'"
         end
+        i += indent.size + 1
     end
   end
 end
