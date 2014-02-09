@@ -66,7 +66,12 @@ class Lexer
       #    continue # 3) dedent
       # this elsif will take care of the first case
       # the number of spaces will determine the indent level
-      end
+      elsif indent = chunk[/\A\:\n( +)/m, 1] # matches ": <newline> <spaces>"
+        # when a new block is created, we spect the indent leve to go up
+        if indent.size <= current_indent
+          raise "Bad indent level, got #{indent.size} indents, " +
+                "expected > #{current_indent}"
+        end
     end
   end
 end
