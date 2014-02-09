@@ -13,4 +13,8 @@ class LexerTest < Test::Unit::TestCase
   def test_identifier
     assert_equal [[:IDENTIFIER, "name"]], Lexer.new.tokenize('name')
   end
+
+  def test_constant
+    assert_equal [[:CONSTANT, "Name"]], Lexer.new.tokenize('Name')
+  end
 end
