@@ -64,7 +64,8 @@ class Lexer
       #      line 1
       #      line 2 # 2) new line inside a block
       #    continue # 3) dedent
-      # this elsif will take care of the first case
+      #
+      # this elsif takes care of the first case
       # the number of spaces will determine the indent level
       elsif indent = chunk[/\A\:\n( +)/m, 1] # matches ": <newline> <spaces>"
         # when a new block is created, we spect the indent leve to go up
@@ -78,7 +79,13 @@ class Lexer
         indent_stack.push(current_indent)
         tokens << [:INDENT, indent.size]
         i += indent.size + 2
-        
+
+      # this elsif takes care of the two last cases
+      # case 2: stay in the same block if the indent level (number of spaces)
+      #         is the same as current_indent
+      # 
+      # case 3: close the current block, if indent level is lower than current_indent
+      
     end
   end
 end
