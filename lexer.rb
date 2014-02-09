@@ -105,7 +105,10 @@ class Lexer
 
       # match long operators such as ||, &&, ==, !=, <= and >=
       # one character long operators are matched by the catch all `else` at the bottom
-      elsif
+      elsif operator = chunk[/\A(\|\||&&|==|!=|<=|=>)/, 1]
+        tokens << [operator, operator]
+        i += operator.size
+        
     end
   end
 end
