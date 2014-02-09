@@ -10,5 +10,8 @@ class Lexer
 
     # collection of all parsed tokens in the form [:TOKEN_TYPE, value]
     tokens = []
+
+    # number of spaces in the last indent
+    current_indent = 0
   end
 end
