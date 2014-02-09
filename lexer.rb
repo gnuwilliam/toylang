@@ -72,6 +72,13 @@ class Lexer
           raise "Bad indent level, got #{indent.size} indents, " +
                 "expected > #{current_indent}"
         end
+
+        # adjust the current indentation level
+        current_indent = indent.size
+        indent_stack.push(current_indent)
+        tokens << [:INDENT, indent.size]
+        i += indent.size + 2
+        
     end
   end
 end
