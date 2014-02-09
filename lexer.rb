@@ -13,5 +13,9 @@ class Lexer
 
     # number of spaces in the last indent
     current_indent = 0
+
+    # keep track of the indentation levels we are in so that when we dedent, we can
+    # check if we're on the correct level.
+    indent_stack = []
   end
 end
