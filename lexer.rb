@@ -85,7 +85,10 @@ class Lexer
       #         is the same as current_indent
       # 
       # case 3: close the current block, if indent level is lower than current_indent
-      
+      elsif indent = chunk[/\A\n( *)/m, 1] # matches "<newline> <spaces>"
+        if indent.size == current_indent # case 2
+          # nothing to do, still in the same block
+          tokens << [:NEWLINE, "\n"]
     end
   end
 end
