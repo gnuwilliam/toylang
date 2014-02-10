@@ -142,4 +142,8 @@ class Parser
     Class:
       CLASS CONSTANT Block                { result = ClassNode.new(val[1], val[2]) }
     ;
+
+    # if block
+    If:
+      IF Expression Block                 { result = IfNode.new(val[1], val[2]) }
 end
