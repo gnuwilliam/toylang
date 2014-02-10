@@ -18,5 +18,7 @@ class ToyClass < ToyObject
     else
       runtime_class = nil
     end
+
+    super(runtime_class)
   end
 end
