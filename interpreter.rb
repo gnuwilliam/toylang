@@ -52,3 +52,6 @@ class FalseNode
     Runtime["false"]
   end
 end
+
+class NilNode
+end
