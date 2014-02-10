@@ -18,3 +18,4 @@ Runtime["String"] = ToyClass.new
 # they need to have a class too
 Runtime["TrueClass"] = ToyClass.new
 Runtime["FalseClass"] = ToyClass.new
+Runtime["NilClass"] = ToyClass.new
