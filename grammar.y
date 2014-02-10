@@ -79,4 +79,17 @@ class Parser
     | FALSE                               { result = FalseNode.new }
     | NIL                                 { result = NilNode.new }
     ;
+
+    # a method call
+    Call:
+      # method
+      IDENTIFIER                          { result = CallNode.new(nil, val[0], []) }
+      # method (arguments)
+    | IDENTIFIER "(" ArgList ")"          { result = CallNode.new(nil, val[0], val[2]) }
+      # receiver.method
+    | Expression "." IDENTIFIER           { result = CallNode.new(val[0], val[2], []) }
+      # receiver.method (arguments)
+    | Expression "."
+        IDENTIFIER "(" ArgList ")"        { result = CallNode.new(val[0], val[2], val[4]) }
+    ;
 end
