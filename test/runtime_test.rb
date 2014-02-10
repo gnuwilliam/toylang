@@ -19,5 +19,12 @@ class RuntimeTest < Test::Unit::TestCase
     assert_raise(RuntimeError) { Runtime["Object"].lookup("non-existant") }
   end
   
+  def test_call_method
+    # mimic Object.new in the language
+    object = Runtime["Object"].call("new")
+    
+    assert_equal Runtime["Object"], object.runtime_class # assert object is an Object
+  end
+  
   
 end
