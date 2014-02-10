@@ -64,5 +64,8 @@ class CallNode
     # if there's no receiver and the method name is the name of a local variable
     # then it's a local variable access
     # this trick allows us to skip the () when calling a method
+    if receiver.nil? && context.locals[method] && arguments.empty?
+      context.locals[method]
+    end
   end
 end
