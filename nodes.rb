@@ -36,3 +36,6 @@ end
 #
 class CallNode < Struct.new(:receiver, :method, :arguments); end
 
+# retrieving the value of a constant
+class GetConstantNode < Struct.new(:name); end
+
