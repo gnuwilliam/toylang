@@ -5,3 +5,7 @@ class Nodes < Struct.new(:nodes)
     self
   end
 end
+
+# literals are static values that have a Ruby representation, eg.: a string, a number,
+# true, false, nil, etc
+class LiteralNode < Struct.new(:value); end
