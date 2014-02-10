@@ -100,3 +100,6 @@ class SetLocalNode
     context.locals[name] = value.eval(context)
   end
 end
+
+class DefNode
+end
