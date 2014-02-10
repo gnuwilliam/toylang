@@ -40,3 +40,6 @@ class StringNode
     Runtime["String"].new_with_value(value)
   end
 end
+
+class TrueNode
+end
