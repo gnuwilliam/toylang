@@ -17,3 +17,4 @@ Runtime["String"] = ToyClass.new
 # everything is an object in the language, even true, false and nil
 # they need to have a class too
 Runtime["TrueClass"] = ToyClass.new
+Runtime["FalseClass"] = ToyClass.new
