@@ -102,4 +102,9 @@ class SetLocalNode
 end
 
 class DefNode
+  def eval(context)
+    # defining a method is adding a method to the current class
+    method = ToyMethod.new(params, body)
+    context.current_class.runtime_methods[name] = method
+  end
 end
