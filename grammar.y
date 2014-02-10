@@ -146,4 +146,10 @@ class Parser
     # if block
     If:
       IF Expression Block                 { result = IfNode.new(val[1], val[2]) }
+    ;
+
+    # block of indented code - hard work is done by the lexer
+    Block:
+      INDENT Expression DEDENT            { result = val[1] }
+    ;
 end
