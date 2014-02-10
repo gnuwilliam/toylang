@@ -88,3 +88,6 @@ class GetConstantNode
     context[name]
   end
 end
+
+class SetConstantNode
+end
