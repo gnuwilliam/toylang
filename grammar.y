@@ -38,5 +38,9 @@ class Parser
     #   - assign to "result" the value returned by the rule
     #   - use val[index of expresion] to reference the expressions on the left
 
-    
+    # all parsing will end in this rule, being the trunk of the AST
+    Root:
+      /* nothing */           { result = Nodes.new([]) }
+    | Expressions             { result = val[0] }
+    ;
 end
