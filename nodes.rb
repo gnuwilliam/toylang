@@ -10,3 +10,4 @@ end
 # true, false, nil, etc
 class LiteralNode < Struct.new(:value); end
 class NumberNode < LiteralNode; end
+class StringNode < LiteralNode; end
