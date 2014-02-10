@@ -48,4 +48,7 @@ class TrueNode
 end
 
 class FalseNode
+  def eval(context)
+    Runtime["false"]
+  end
 end
