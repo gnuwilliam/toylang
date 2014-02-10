@@ -94,5 +94,18 @@ CODE
     ]), Parser.new.parse("!2")
   end
   
-  
+  def test_if
+    code = <<-CODE
+if true:
+  nil
+CODE
+    
+    nodes = Nodes.new([
+      IfNode.new(TrueNode.new,
+        Nodes.new([NilNode.new])
+      )
+    ])
+    
+    assert_equal nodes, Parser.new.parse(code)
+  end
 end
