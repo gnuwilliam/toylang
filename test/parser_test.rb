@@ -23,5 +23,20 @@ class ParserTest < Test::Unit::TestCase
     assert_equal Nodes.new([SetConstantNode.new("A", NumberNode.new(1))]), Parser.new.parse("A = 1")
   end
   
+  def test_def
+    code = <<-CODE
+def method:
+  true
+CODE
+    
+    nodes = Nodes.new([
+      DefNode.new("method", [],
+        Nodes.new([TrueNode.new])
+      )
+    ])
+    
+    assert_equal nodes, Parser.new.parse(code)
+  end
+  
   
 end
