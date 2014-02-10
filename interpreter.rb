@@ -66,6 +66,19 @@ class CallNode
     # this trick allows us to skip the () when calling a method
     if receiver.nil? && context.locals[method] && arguments.empty?
       context.locals[method]
+
+    # method call
+    else
+      if receiver
+        value = receiver.eval(context)
+      else
+        # in case there's no receiver, default to self, calling "print" is like
+        # "self.print"
+        value = context.current_self
+      end
+
+      eval_arguments = arguments.map { |arg| arg.eval(context) }
+      value.call(method, eval_arguments)
     end
   end
 end
