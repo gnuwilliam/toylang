@@ -9,18 +9,23 @@ end
 # literals are static values that have a Ruby representation, eg.: a string, a number,
 # true, false, nil, etc
 class LiteralNode < Struct.new(:value); end
+
 class NumberNode < LiteralNode; end
+
 class StringNode < LiteralNode; end
+
 class TrueNode < LiteralNode
   def initialize
     super(true)
   end
 end
+
 class FalseNode < LiteralNode
   def initialize
     super(false)
   end
 end
+
 class NilNode < LiteralNode
   def initialize
     super(nil)
