@@ -21,4 +21,12 @@ class ToyClass < ToyObject
 
     super(runtime_class)
   end
+
+  # lookup a method
+  def lookup(method_name)
+    method = @runtime_methods[method_name]
+    unless method
+      raise "Method not found #{method_name}"
+    end
+    method
 end
