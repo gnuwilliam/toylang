@@ -98,4 +98,20 @@ class Parser
     | Expression                          { result = val }
     | ArgList "," Expression              { result = val[0] << val[2] }
     ;
+
+    Operator:
+      # binary operators
+      Expression '||' Expression          { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '&&' Expression          { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '==' Expression          { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '!=' Expression          { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '>' Expression           { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '>=' Expression          { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '<' Expression           { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '<=' Expression          { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '+' Expression           { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '-' Expression           { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '*' Expression           { result = CallNode.new(val[0], val[1], [val[2]]) }
+    | Expression '/' Expression           { result = CallNode.new(val[0], val[1], [val[2]]) }
+    ;
 end
