@@ -14,5 +14,9 @@ class ParserTest < Test::Unit::TestCase
     assert_equal Nodes.new([CallNode.new(NumberNode.new(1), "method", [])]), Parser.new.parse("1.method")
   end
   
+  def test_call_with_arguments
+    assert_equal Nodes.new([CallNode.new(nil, "method", [NumberNode.new(1), NumberNode.new(2)])]), Parser.new.parse("method(1, 2)")
+  end
+  
   
 end
