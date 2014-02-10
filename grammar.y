@@ -2,6 +2,7 @@ class Parser
 
 # declare tokens produced by the lexer
 token IF ELSE
+token WHILE
 token DEF
 token CLASS
 token NEWLINE
