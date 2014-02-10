@@ -84,4 +84,7 @@ class CallNode
 end
 
 class GetConstantNode
+  def eval(context)
+    context[name]
+  end
 end
