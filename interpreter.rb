@@ -82,3 +82,6 @@ class CallNode
     end
   end
 end
+
+class GetConstantNode
+end
