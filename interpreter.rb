@@ -94,3 +94,6 @@ class SetConstantNode
     context[name] = value.eval(context)
   end
 end
+
+class SetLocalNode
+end
