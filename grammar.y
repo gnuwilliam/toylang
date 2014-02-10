@@ -118,4 +118,10 @@ class Parser
     Constant:
       CONSTANT                            { result = GetConstantNode.new(val[0]) }
     ;
+
+    # assignment to a variable or constant
+    Assign:
+      IDENTIFIER "=" Expression           { result = SetLocalNode.new(val[0], val[2]) }
+    | CONSTANT "=" Expression             { result = SetConstantNode.new(val[0], val[2]) }
+    ;
 end
