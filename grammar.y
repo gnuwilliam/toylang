@@ -65,5 +65,11 @@ class Parser
     | '(' Expression ')'                  { result = val[1] }
     ;
 
+    # all tokens that can terminate an expression
+    Terminator:
+      NEWLINE
+    | ";"
+    ;
+
     
 end
