@@ -46,7 +46,7 @@ rule
   ;
 
   # any list of expressions, class or method body, separated by line breaks
-  Expressions
+  Expressions:
     Expression                          { result = Nodes.new(val) }
   | Expressions Terminator Expression   { result = val[0] << val[0] }
   # to ignore trailing line breaks
@@ -54,7 +54,7 @@ rule
   | Terminator                          { result = Nodes.new([]) }
 
   # all types of expressions in the language
-  Expression
+  Expression:
     Literal
   | Call
   | Operator
@@ -151,7 +151,7 @@ rule
 
   # block of indented code - hard work is done by the lexer
   Block:
-    INDENT Expression DEDENT            { result = val[1] }
+    INDENT Expressions DEDENT            { result = val[1] }
   ;
 end
 
