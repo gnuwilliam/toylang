@@ -112,7 +112,7 @@ end
 class ClassNode
   def eval(context)
     # try to locate the class. allows reopening classes to add methods
-    awesome_class = context[name]
+    toy_class = context[name]
 
     unless toy_class # class does not exist yet
       toy_class = ToyClass.new
