@@ -45,3 +45,6 @@ class SetConstantNode < Struct.new(:name, :value); end
 # setting the value of a local variable
 class SetLocalNode < Struct.new(:name, :value); end
 
+# method definition
+class DefNode < Struct.new(:name, :params, :body); end
+
