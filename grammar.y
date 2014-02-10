@@ -54,7 +54,7 @@ class Parser
 
     # all types of expressions in the language
     Expression
-      Literall
+      Literal
     | Call
     | Operator
     | Constant
@@ -70,6 +70,4 @@ class Parser
       NEWLINE
     | ";"
     ;
-
-    
 end
