@@ -133,4 +133,10 @@ class ClassNode
 end
 
 class IfNode
+  def eval(context)
+    # turn the condition node into a Ruby value to use Ruby's "if" control structure
+    if condition.eval(context).ruby_value
+      body.eval(context)
+    end
+  end
 end
