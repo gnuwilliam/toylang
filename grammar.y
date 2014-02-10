@@ -158,3 +158,11 @@ end
 ---- header
   require "lexer"
   require "nodes"
+
+---- inner
+  # this code will be put as-is in the Parser class
+  def parse(code, show_tokens = false)
+    @tokens = Lexer.new.tokenize(code) # tokenize the code using our lexer
+    puts @tokens.inspect if show_tokens
+    do_parse # kickoff the parsing process
+  end
