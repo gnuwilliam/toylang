@@ -14,5 +14,10 @@ class RuntimeTest < Test::Unit::TestCase
     assert_equal 32, Runtime["Number"].new_with_value(32).ruby_value
   end
   
+  def test_lookup_method_in_class
+    assert_not_nil Runtime["Object"].lookup("print")
+    assert_raise(RuntimeError) { Runtime["Object"].lookup("non-existant") }
+  end
+  
   
 end
