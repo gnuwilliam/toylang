@@ -29,4 +29,8 @@ class Nodes
 end
 
 class NumberNode
+  def eval(context)
+    # access the Runtime to create a new instance of the Number class
+    Runtime["Number"].new_with_value(value)
+  end
 end
