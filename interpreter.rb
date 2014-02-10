@@ -10,3 +10,6 @@ class Interpreter
     @parser.parse(code).eval(Runtime)
   end
 end
+
+class Nodes
+end
