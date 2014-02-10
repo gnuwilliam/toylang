@@ -20,11 +20,13 @@ class RuntimeTest < Test::Unit::TestCase
   end
   
   def test_call_method
-    # mimic Object.new in the language
+    # Mimic Object.new in the language
     object = Runtime["Object"].call("new")
     
     assert_equal Runtime["Object"], object.runtime_class # assert object is an Object
   end
   
-  
+  def test_a_class_is_a_class
+    assert_equal Runtime["Class"], Runtime["Number"].runtime_class
+  end
 end
