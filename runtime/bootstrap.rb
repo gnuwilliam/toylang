@@ -39,3 +39,8 @@ Runtime["Object"].runtime_methods["print"] = proc do |receiver, arguments|
   puts arguments.first.ruby_value
   Runtime["nil"]
 end
+
+Runtime["Number"].runtime_methods["+"] = proc do |receiver,arguments|
+  result = receiver.ruby_value + arguments.first.ruby_value
+  Runtime["Number"].new_with_value(result)
+end
