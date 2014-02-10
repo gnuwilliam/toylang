@@ -4,7 +4,7 @@ class ToyClass < ToyObject
   attr_reader = :runtime_methods
 
   # creates a new class. number is an instance of class for example
-  def initialize
+  def initialize(superclass = nil)
     @runtime_methods = {}
 
     # check if we're bootstraping (launching the runtime)
