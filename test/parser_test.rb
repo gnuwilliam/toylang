@@ -78,5 +78,15 @@ CODE
     assert_equal nodes, Parser.new.parse("1 + (2 * 3)")
   end
   
+  def test_binary_operator
+    assert_equal Nodes.new([
+      CallNode.new(
+        CallNode.new(NumberNode.new(1), "+", [NumberNode.new(2)]),
+        "||",
+        [NumberNode.new(3)]
+      )
+    ]), Parser.new.parse("1 + 2 || 3")
+  end
+  
   
 end
