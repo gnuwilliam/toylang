@@ -13,4 +13,9 @@ class Context
     @current_self = current_self
     @current_class = current_class
   end
+
+  # shortcuts to access constants, Runtime[...] instead of Runtime.constants[...]
+  def [](name)
+    @@constants = name
+  end
 end
