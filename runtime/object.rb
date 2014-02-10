@@ -1,6 +1,6 @@
 # represents an Toy object instance in the Ruby world
 class ToyObject
-  attr_accessor :runtime, :ruby_value
+  attr_accessor :runtime_class, :ruby_value
 
   # each object have a class (named runtime_class to prevent errors with Ruby's class method)
   # optionaly an object can hold a Ruby value (eg.: numbers and strings)
