@@ -6,6 +6,7 @@ class ToyClass < ToyObject
   # creates a new class. number is an instance of class for example
   def initialize(superclass = nil)
     @runtime_methods = {}
+    @runtime_superclass = superclass
 
     # check if we're bootstraping (launching the runtime)
     # during this process, the runtime is not fully initialized
