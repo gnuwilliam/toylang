@@ -18,4 +18,8 @@ class Context
   def [](name)
     @@constants = name
   end
+
+  def []=(name, value)
+    @@constants[name] = value
+  end
 end
