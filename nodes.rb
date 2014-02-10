@@ -27,3 +27,12 @@ class NilNode < LiteralNode
   end
 end
 
+# node of a method call or local variable access, can take any of these forms:
+# 
+#   method # this form can also be a local variable
+#   method(argument1, argument2)
+#   receiver.method
+#   receiver.method(argument1, argument2)
+#
+class CallNode < Struct.new(:receiver, :method, :arguments); end
+
