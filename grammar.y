@@ -70,4 +70,13 @@ class Parser
       NEWLINE
     | ";"
     ;
+
+    # all hard-coded values
+    Literal:
+      NUMBER                              { result = NumberNode.new(val[0]) }
+    | STRING                              { result = StringNode.new(val[0]) }
+    | TRUE                                { result = TrueNode.new }
+    | FALSE                               { result = FalseNode.new }
+    | NIL                                 { result = NilNode.new }
+    ;
 end
