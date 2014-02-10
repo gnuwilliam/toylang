@@ -14,6 +14,9 @@ Runtime["Object"] = object_class
 Runtime["Number"] = ToyClass.new
 Runtime["String"] = ToyClass.new
 
+# inherited class
+Runtime["Number"] = ToyClass.new(Runtime["Object"])
+
 # everything is an object in the language, even true, false and nil
 # they need to have a class too
 Runtime["TrueClass"] = ToyClass.new
