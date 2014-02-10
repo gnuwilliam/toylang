@@ -154,3 +154,7 @@ rule
     INDENT Expression DEDENT            { result = val[1] }
   ;
 end
+
+---- header
+  require "lexer"
+  require "nodes"
