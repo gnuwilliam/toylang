@@ -16,3 +16,8 @@ class TrueNode < LiteralNode
     super(true)
   end
 end
+class FalseNode < LiteralNode
+  def initialize
+    super(false)
+  end
+end
