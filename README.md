@@ -1,6 +1,6 @@
 # Toy Programming Language
 
-Simple toy programming language implementation based on Ruby and Python
+Simple toy programming language that runs on top of Ruby
 
 ## Running the tests
 
