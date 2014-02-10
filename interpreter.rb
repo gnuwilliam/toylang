@@ -119,5 +119,11 @@ class ClassNode
       # register the class as a constant in the runtime
       context[name] = toy_class
     end
+
+    # evaluate the body of the class in its context
+    # providing a custom context allows to control 
+    # where methods are added when defined with the def keyword
+    # in this case, we add them to the newly created class
+    class_context = Context.new(toy_class, toy_class)
   end
 end
