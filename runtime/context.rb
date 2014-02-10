@@ -8,4 +8,6 @@ class Context
   # implement namespacing of constants, you could store it in the instance of this class
   @@constants = {}
 
+  def initialize(current_self, current_class = current_self.runtime_class)
+  end
 end
