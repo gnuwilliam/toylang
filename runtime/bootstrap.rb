@@ -29,3 +29,10 @@ Runtime["nil"] = Runtime["NilClass"].new_with_value(true)
 Runtime["Class"].runtime_methods["new"] = proc do |receiver, arguments|
   receiver.new
 end
+
+# print an object to the console
+# eg.: print("hi there!")
+Runtime["Object"].runtime_methods["print"] = proc do |receiver, arguments|
+  puts arguments.first.ruby_value
+  Runtime["nil"]
+end
