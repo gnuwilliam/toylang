@@ -58,3 +58,6 @@ class NilNode
     Runtime["nil"]
   end
 end
+
+class CallNode
+end
