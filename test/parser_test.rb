@@ -53,5 +53,20 @@ CODE
     assert_equal nodes, Parser.new.parse(code)
   end
   
+  def test_class
+    code = <<-CODE
+class Muffin:
+  true
+CODE
+    
+    nodes = Nodes.new([
+      ClassNode.new("Muffin",
+        Nodes.new([TrueNode.new])
+      )
+    ])
+    
+    assert_equal nodes, Parser.new.parse(code)
+  end
+  
   
 end
