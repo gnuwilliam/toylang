@@ -48,7 +48,7 @@ rule
   # any list of expressions, class or method body, separated by line breaks
   Expressions:
     Expression                          { result = Nodes.new(val) }
-  | Expressions Terminator Expression   { result = val[0] << val[0] }
+  | Expressions Terminator Expression   { result = val[0] << val[2] }
   # to ignore trailing line breaks
   | Expressions Terminator              { result = val[0] }
   | Terminator                          { result = Nodes.new([]) }
