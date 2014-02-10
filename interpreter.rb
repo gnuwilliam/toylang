@@ -108,3 +108,6 @@ class DefNode
     context.current_class.runtime_methods[name] = method
   end
 end
+
+class ClassNode
+end
