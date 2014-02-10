@@ -13,5 +13,7 @@ class ToyMethod
     @params.each_with_index do |param, index|
       context.locals[param] = arguments[index]
     end
+
+    @body.eval(context)
   end
 end
