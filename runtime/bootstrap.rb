@@ -8,3 +8,5 @@ object_class.runtime_class  			# Object.class = Class
 
 # create the Runtime object (the root context) on which all code starts its evaluation
 Runtime = Context.new(object_class.new)
+
+Runtime["Class"] = toy_class
