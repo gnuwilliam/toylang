@@ -13,3 +13,7 @@ Runtime["Class"] = toy_class
 Runtime["Object"] = object_class
 Runtime["Number"] = ToyClass.new
 Runtime["String"] = ToyClass.new
+
+# everything is an object in the language, even true, false and nil
+# they need to have a class too
+Runtime["TrueClass"] = ToyClass.new
