@@ -11,3 +11,4 @@ Runtime = Context.new(object_class.new)
 
 Runtime["Class"] = toy_class
 Runtime["Object"] = object_class
+Runtime["Number"] = ToyClass.new
