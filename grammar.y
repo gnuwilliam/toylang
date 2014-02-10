@@ -64,6 +64,7 @@ rule
   | Def
   | Class
   | If
+  | While
   | '(' Expression ')'                  { result = val[1] }
   ;
 
