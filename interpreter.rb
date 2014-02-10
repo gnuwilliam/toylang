@@ -131,3 +131,6 @@ class ClassNode
     toy_class
   end
 end
+
+class IfNode
+end
