@@ -29,4 +29,10 @@ class ToyClass < ToyObject
       raise "Method not found #{method_name}"
     end
     method
+  end
+
+  # create a new instance of this class
+  def new
+    ToyObject.new(self)
+  end
 end
