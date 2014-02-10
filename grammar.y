@@ -51,4 +51,19 @@ class Parser
     # to ignore trailing line breaks
     | Expressions Terminator              { result = val[0] }
     | Terminator                          { result = Nodes.new([]) }
+
+    # all types of expressions in the language
+    Expression
+      Literall
+    | Call
+    | Operator
+    | Constant
+    | Assign
+    | Def
+    | Class
+    | If
+    | '(' Expression ')'                  { result = val[1] }
+    ;
+
+    
 end
