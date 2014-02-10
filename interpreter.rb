@@ -34,3 +34,6 @@ class NumberNode
     Runtime["Number"].new_with_value(value)
   end
 end
+
+class StringNode
+end
