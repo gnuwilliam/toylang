@@ -1,4 +1,10 @@
-# mimic Object.new in the language
-object = Runtime["Object"].call("new")
+require "test_helper"
+require "runtime"
 
-assert_equal Runtime["Object"], object.runtime_class # assert object is an Object
+class RuntimeTest < Test::Unit::TestCase
+  def test_get_constant
+    assert_not_nil Runtime["Object"]
+  end
+  
+  
+end
