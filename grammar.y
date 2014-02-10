@@ -40,7 +40,15 @@ class Parser
 
     # all parsing will end in this rule, being the trunk of the AST
     Root:
-      /* nothing */           { result = Nodes.new([]) }
-    | Expressions             { result = val[0] }
+      /* nothing */                       { result = Nodes.new([]) }
+    | Expressions                         { result = val[0] }
     ;
+
+    # any list of expressions, class or method body, separated by line breaks
+    Expressions
+      Expression                          { result = Nodes.new(val) }
+    | Expressions Terminator Expression   { result = val[0] << val[0] }
+    # to ignore trailing line breaks
+    | Expressions Terminator              { result = val[0] }
+    | Terminator                          { result = Nodes.new([]) }
 end
