@@ -22,3 +22,4 @@ Runtime["NilClass"] = ToyClass.new
 
 Runtime["true"] = Runtime["TrueClass"].new_with_value(true)
 Runtime["false"] = Runtime["FalseClass"].new_with_value(true)
+Runtime["nil"] = Runtime["NilClass"].new_with_value(true)
