@@ -32,6 +32,8 @@ class NilNode < LiteralNode
   end
 end
 
+class WhileNode < Struct.new(:condition, :body) end
+
 # node of a method call or local variable access, can take any of these forms:
 # 
 #   method # this form can also be a local variable
