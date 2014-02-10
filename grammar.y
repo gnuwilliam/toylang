@@ -25,4 +25,18 @@ class Parser
     right '='
     left ','
   preclow
+
+  rule 
+    # all rules are declared in this format:
+    #
+    #    Rulename:
+    #      OtherRule TOKEN AnotherRule    { code to run when this matches }
+    #    | OtherRule                      { ... }
+    #    ;
+    #
+    # in the code section (inside the {...} on the right):
+    #   - assign to "result" the value returned by the rule
+    #   - use val[index of expresion] to reference the expressions on the left
+
+    
 end
