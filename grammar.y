@@ -124,4 +124,11 @@ class Parser
       IDENTIFIER "=" Expression           { result = SetLocalNode.new(val[0], val[2]) }
     | CONSTANT "=" Expression             { result = SetConstantNode.new(val[0], val[2]) }
     ;
+
+    # method definition
+    Def:
+      DEF IDENTIFIER Block                { result = DefNode.new(val[1], [], val[2]) }
+    | DEF IDENTIFIER
+        "(" ParamList ")" Block           { result = DefNode.new(val[1], val[3], val[5]) }
+    ;
 end
