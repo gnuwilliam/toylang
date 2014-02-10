@@ -27,3 +27,6 @@ class Nodes
     return_value || Runtime["nil"]
   end
 end
+
+class NumberNode
+end
