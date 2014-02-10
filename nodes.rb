@@ -48,3 +48,6 @@ class SetLocalNode < Struct.new(:name, :value); end
 # method definition
 class DefNode < Struct.new(:name, :params, :body); end
 
+# class definition
+class ClassNode < Struct.new(:name, :body); end
+
