@@ -19,3 +19,5 @@ Runtime["String"] = ToyClass.new
 Runtime["TrueClass"] = ToyClass.new
 Runtime["FalseClass"] = ToyClass.new
 Runtime["NilClass"] = ToyClass.new
+
+Runtime["true"] = Runtime["TrueClass"].new_with_value(true)
