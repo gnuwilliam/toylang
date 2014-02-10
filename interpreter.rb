@@ -110,4 +110,8 @@ class DefNode
 end
 
 class ClassNode
+  def eval(context)
+    # try to locate the class. allows reopening classes to add methods
+    awesome_class = context[name]
+  end
 end
