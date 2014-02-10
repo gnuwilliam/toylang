@@ -125,5 +125,9 @@ class ClassNode
     # where methods are added when defined with the def keyword
     # in this case, we add them to the newly created class
     class_context = Context.new(toy_class, toy_class)
+
+    body.eval(class_context)
+
+    toy_class
   end
 end
