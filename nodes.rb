@@ -51,3 +51,6 @@ class DefNode < Struct.new(:name, :params, :body); end
 # class definition
 class ClassNode < Struct.new(:name, :body); end
 
+# "if" control structure. look at this node if you want to implement other control
+# structures like while, for, loop, etc
+class IfNode  < Struct.new(:condition, :body); end
