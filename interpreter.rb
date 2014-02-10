@@ -90,4 +90,7 @@ class GetConstantNode
 end
 
 class SetConstantNode
+  def eval(context)
+    context[name] = value.eval(context)
+  end
 end
