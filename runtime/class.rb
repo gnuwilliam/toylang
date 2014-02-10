@@ -27,7 +27,11 @@ class ToyClass < ToyObject
   def lookup(method_name)
     method = @runtime_methods[method_name]
     unless method
-      raise "Method not found #{method_name}"
+      if @runtime_superclass
+        return @runtime_superclass.lookup(method_name)
+      else
+        raise "Method not found #{method_name}"
+      end
     end
     method
   end
