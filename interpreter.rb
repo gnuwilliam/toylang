@@ -113,5 +113,11 @@ class ClassNode
   def eval(context)
     # try to locate the class. allows reopening classes to add methods
     awesome_class = context[name]
+
+    unless toy_class # class does not exist yet
+      toy_class = ToyClass.new
+      # register the class as a constant in the runtime
+      context[name] = toy_class
+    end
   end
 end
