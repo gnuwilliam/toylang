@@ -12,4 +12,9 @@ class Interpreter
 end
 
 class Nodes
+  # this method is the "interpreter" part of the language 
+  # all nodes know how to eval # itself and returns the result
+  # of its evaluation by implementing the "eval" method
+  # the "context" variable is the environment in which the node is evaluated
+  # local variables, current class, etc
 end
