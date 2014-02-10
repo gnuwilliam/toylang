@@ -60,4 +60,9 @@ class NilNode
 end
 
 class CallNode
+  def eval(context)
+    # if there's no receiver and the method name is the name of a local variable
+    # then it's a local variable access
+    # this trick allows us to skip the () when calling a method
+  end
 end
