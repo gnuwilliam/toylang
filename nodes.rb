@@ -42,3 +42,6 @@ class GetConstantNode < Struct.new(:name); end
 # setting the value of a constant
 class SetConstantNode < Struct.new(:name, :value); end
 
+# setting the value of a local variable
+class SetLocalNode < Struct.new(:name, :value); end
+
