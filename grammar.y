@@ -166,3 +166,7 @@ end
     puts @tokens.inspect if show_tokens
     do_parse # kickoff the parsing process
   end
+
+  def next_token
+    @tokens.shift
+  end
