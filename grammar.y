@@ -152,4 +152,5 @@ class Parser
     Block:
       INDENT Expression DEDENT            { result = val[1] }
     ;
+  end
 end
