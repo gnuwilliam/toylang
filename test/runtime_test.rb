@@ -10,5 +10,9 @@ class RuntimeTest < Test::Unit::TestCase
     assert_equal Runtime["Object"], Runtime["Object"].new.runtime_class
   end
   
+  def test_create_an_object_mapped_to_ruby_value
+    assert_equal 32, Runtime["Number"].new_with_value(32).ruby_value
+  end
+  
   
 end
