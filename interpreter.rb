@@ -46,3 +46,6 @@ class TrueNode
     Runtime["true"]
   end
 end
+
+class FalseNode
+end
