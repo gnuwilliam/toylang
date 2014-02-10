@@ -68,5 +68,15 @@ CODE
     assert_equal nodes, Parser.new.parse(code)
   end
   
+  def test_arithmetic
+    nodes = Nodes.new([
+      CallNode.new(NumberNode.new(1), "+", [
+        CallNode.new(NumberNode.new(2), "*", [NumberNode.new(3)])
+      ])
+    ])
+    assert_equal nodes, Parser.new.parse("1 + 2 * 3")
+    assert_equal nodes, Parser.new.parse("1 + (2 * 3)")
+  end
+  
   
 end
