@@ -151,6 +151,10 @@ rule
     IF Expression Block                 { result = IfNode.new(val[1], val[2]) }
   ;
 
+  # while block
+  While:
+    WHILE Expression Block              { result = WhileNode.new(val[1], val[2]) }
+
   # block of indented code - hard work is done by the lexer
   Block:
     INDENT Expressions DEDENT            { result = val[1] }
