@@ -92,4 +92,10 @@ class Parser
     | Expression "."
         IDENTIFIER "(" ArgList ")"        { result = CallNode.new(val[0], val[2], val[4]) }
     ;
+
+    ArgList:
+      /* nothing */                       { result = [] }
+    | Expression                          { result = val }
+    | ArgList "," Expression              { result = val[0] << val[2] }
+    ;
 end
