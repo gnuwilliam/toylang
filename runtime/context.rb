@@ -16,7 +16,7 @@ class Context
 
   # shortcuts to access constants, Runtime[...] instead of Runtime.constants[...]
   def [](name)
-    @@constants = name
+    @@constants[name]
   end
 
   def []=(name, value)
