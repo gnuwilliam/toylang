@@ -40,4 +40,8 @@ class ToyClass < ToyObject
   def new
     ToyObject.new(self)
   end
+
+  def new_with_value(value)
+    ToyObject.new(self, value)
+  end
 end
