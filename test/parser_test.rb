@@ -88,5 +88,11 @@ CODE
     ]), Parser.new.parse("1 + 2 || 3")
   end
   
+  def test_unary_operator
+    assert_equal Nodes.new([
+      CallNode.new(NumberNode.new(2), "!", [])
+    ]), Parser.new.parse("!2")
+  end
+  
   
 end
