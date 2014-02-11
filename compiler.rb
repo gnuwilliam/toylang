@@ -75,4 +75,9 @@ class Compiler
     # keep track of the pointer so the compiler can find it back later
     @locals[name] = ptr
   end
+
+  # load value of a local variable
+  def load(value)
+    @builder.load(@locals[name])
+  end
 end
