@@ -64,3 +64,15 @@ def call(func, args = [])
   f = @module.functions.named(func)
   @builder.call(f, *args)
 end
+
+# assign a local variable
+def assign(name, value)
+  # allocate the memory and returns a pointer to it
+  ptr = @builder.alloca(value.type)
+
+  # store the value inside the pointer
+  @builder.store(value, ptr)
+
+  # keep track of the pointer so the compiler can find it back later
+  @locals[name] = ptr
+end
