@@ -54,3 +54,7 @@ def new_string(value)
   @builder.global_string_pointer(value)
 end
 
+# create a new number
+def new_number(value)
+  LLVM::Int(value)
+end
