@@ -39,3 +39,8 @@ class Compiler
     @engine = LLVM::ExecutionEngine.create_jit_compiler(@module)
   end
 end
+
+# initial header to initialize the module
+def preamble
+  define_external_functions
+end
