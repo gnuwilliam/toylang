@@ -81,6 +81,7 @@ class Compiler
     @builder.load(@locals[name])
   end
 
+  # defines a function
   def function(name)
     func = @module.functions.add(name, [], INT)
     generator = Compiler.new(@module, func)
