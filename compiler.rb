@@ -44,3 +44,7 @@ end
 def preamble
   define_external_functions
 end
+
+def finish
+  @builder.ret(LLVM::Int(0))
+end
