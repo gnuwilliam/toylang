@@ -58,3 +58,9 @@ end
 def new_number(value)
   LLVM::Int(value)
 end
+
+# call a function
+def call(func, args = [])
+  f = @module.functions.named(func)
+  @builder.call(f, *args)
+end
