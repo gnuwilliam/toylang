@@ -40,10 +40,10 @@ CODE
   def test_define_class
     code = <<-CODE
 class Pony:
-  def awesome:
+  def toy:
     true
 
-Pony.new.awesome
+Pony.new.toy
 CODE
     
     assert_equal true, Interpreter.new.eval(code).ruby_value
@@ -60,13 +60,13 @@ CODE
   
   def test_interpret
     code = <<-CODE
-class Awesome:
+class Toy:
   def does_it_work:
     "yeah!"
 
-awesome_object = Awesome.new
-if awesome_object:
-  print(awesome_object.does_it_work)
+toy_object = Toy.new
+if toy_object:
+  print(toy_object.does_it_work)
 CODE
     
     assert_prints("yeah!\n") { Interpreter.new.eval(code) }
