@@ -88,4 +88,13 @@ class Compiler
     yield generator
     generator.finish
   end
+
+  # optmize the generated LLVM byte-code
+  def optimize
+    @module.verify!
+    pass_manager = LLVM::PassManager.new(@engine)
+    pass_manager.simplifycfg! # simplify the CFG
+    pass_manager.mem2reg!     # promote memory to register
+    pass_manager.gdce!        # dead global elimination
+  end
 end
