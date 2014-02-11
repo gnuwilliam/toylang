@@ -48,3 +48,9 @@ end
 def finish
   @builder.ret(LLVM::Int(0))
 end
+
+# create a new string
+def new_string(value)
+  @builder.global_string_pointer(value)
+end
+
