@@ -18,3 +18,16 @@ interpreter = Interpreter.new
 if file = ARGV.first
   interpreter.eval File.read(file)
   
+# start the REPL, read-eval-print-loop
+else
+  puts "ToyLang REPL - William Oliveira <sudowilliam@gmail.com>"
+  puts "CTRL+C to quit"
+  
+  loop do
+    line = Readline::readline(">> ")
+    Readline::HISTORY.push(line)
+    value = interpreter.eval(line)
+    puts "=> #{value.ruby_value.inspect}"
+  end
+  
+end
