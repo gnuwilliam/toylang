@@ -97,4 +97,9 @@ class Compiler
     pass_manager.mem2reg!     # promote memory to register
     pass_manager.gdce!        # dead global elimination
   end
+
+  # JIT compile and run the LLVM byte-code
+  def run
+    @engine.run_function(@function, 0, 0)
+  end
 end
