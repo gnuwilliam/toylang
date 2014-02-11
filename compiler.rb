@@ -7,4 +7,4 @@ require 'llvm/execution_engine'
 require 'llvm/transforms/scalar'
 require 'llvm/transforms/ipo'
 
-
+LLVM.init_x86
