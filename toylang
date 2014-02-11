@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# Toy Lang!
+# 
+# usage :
+#   ./toylang example.toy   # to eval a file
+#   ./toylang               # to start the REPL
+#
+# on Windows run with: ruby toylang [options]
