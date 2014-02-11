@@ -80,4 +80,11 @@ class Compiler
   def load(value)
     @builder.load(@locals[name])
   end
+
+  def function(name)
+    func = @module.functions.add(name, [], INT)
+    generator = Compiler.new(@module, func)
+    yield generator
+    generator.finish
+  end
 end
