@@ -6,3 +6,5 @@
 #   ./toylang               # to start the REPL
 #
 # on Windows run with: ruby toylang [options]
+
+$:.unshift "." # fix for Ruby 1.9
