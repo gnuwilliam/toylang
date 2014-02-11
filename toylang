@@ -8,3 +8,7 @@
 # on Windows run with: ruby toylang [options]
 
 $:.unshift "." # fix for Ruby 1.9
+
+require "interpreter"
+require "readline"
+
