@@ -38,41 +38,41 @@ class Compiler
 
     @engine = LLVM::ExecutionEngine.create_jit_compiler(@module)
   end
-end
 
-# initial header to initialize the module
-def preamble
-  define_external_functions
-end
+  # initial header to initialize the module
+  def preamble
+    define_external_functions
+  end
 
-def finish
-  @builder.ret(LLVM::Int(0))
-end
+  def finish
+    @builder.ret(LLVM::Int(0))
+  end
 
-# create a new string
-def new_string(value)
-  @builder.global_string_pointer(value)
-end
+  # create a new string
+  def new_string(value)
+    @builder.global_string_pointer(value)
+  end
 
-# create a new number
-def new_number(value)
-  LLVM::Int(value)
-end
+  # create a new number
+  def new_number(value)
+    LLVM::Int(value)
+  end
 
-# call a function
-def call(func, args = [])
-  f = @module.functions.named(func)
-  @builder.call(f, *args)
-end
+  # call a function
+  def call(func, args = [])
+    f = @module.functions.named(func)
+    @builder.call(f, *args)
+  end
 
-# assign a local variable
-def assign(name, value)
-  # allocate the memory and returns a pointer to it
-  ptr = @builder.alloca(value.type)
+  # assign a local variable
+  def assign(name, value)
+    # allocate the memory and returns a pointer to it
+    ptr = @builder.alloca(value.type)
 
-  # store the value inside the pointer
-  @builder.store(value, ptr)
+    # store the value inside the pointer
+    @builder.store(value, ptr)
 
-  # keep track of the pointer so the compiler can find it back later
-  @locals[name] = ptr
+    # keep track of the pointer so the compiler can find it back later
+    @locals[name] = ptr
+  end
 end
