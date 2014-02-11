@@ -140,3 +140,6 @@ class IfNode
     end
   end
 end
+
+def WhileNode
+end
