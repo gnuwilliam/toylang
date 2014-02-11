@@ -102,4 +102,8 @@ class Compiler
   def run
     @engine.run_function(@function, 0, 0)
   end
+
+  def dump
+    @module.dump
+  end
 end
