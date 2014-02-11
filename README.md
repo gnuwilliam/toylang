@@ -2,6 +2,10 @@
 
 Simple toy programming language that runs on top of Ruby
 
+## Run the example
+
+``./toylang test.toy``
+
 ## Running the tests
 
 ### Lexer tests
